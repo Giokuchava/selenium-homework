@@ -5,7 +5,11 @@ import org.openqa.selenium.safari.SafariDriver;
 public class CommandsTest {
     public static void main(String[] args) throws InterruptedException {
 
-      System.out.println("Hello World!");
+        WebDriver driver = new SafariDriver();
+        driver.get("https://the-internet.herokuapp.com/dynamic_controls");
+
+
+
 
 
     }
