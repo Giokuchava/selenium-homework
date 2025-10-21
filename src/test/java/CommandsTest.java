@@ -26,12 +26,12 @@ public class CommandsTest {
         System.out.println("Button text changed successfully");
 
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("Bootcamp");
-        Thread.sleep(1000);
+
 
         driver.findElement(By.xpath("//input[@type='text']")).clear();
 
         driver.get("http://the-internet.herokuapp.com/drag_and_drop");
-        Thread.sleep(1000);
+
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("column-a")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("column-b")));
@@ -44,7 +44,7 @@ public class CommandsTest {
         } else {
             System.out.println("Columns A and B are not aligned");
         }
-        Thread.sleep(1000);
+
 
 
         driver.close();
