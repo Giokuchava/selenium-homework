@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,6 +12,8 @@ public class CommandsTest {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver = new SafariDriver();
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
         driver.findElement(By.xpath("//button[text()='Enable']")).click();
@@ -36,6 +39,7 @@ public class CommandsTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("column-a")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("column-b")));
 
+
         int columnAY = driver.findElement(By.id("column-a")).getLocation().getY();
         int columnBY = driver.findElement(By.id("column-b")).getLocation().getY();
 
@@ -48,6 +52,7 @@ public class CommandsTest {
 
 
         driver.close();
+
 
     }
 }
