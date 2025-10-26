@@ -33,8 +33,8 @@ public class CommandsTest {
 
         driver.findElement(By.xpath("//input[@type='text']")).clear();
 
-        driver.get("http://the-internet.herokuapp.com/drag_and_drop");
-
+        driver.navigate().to("http://the-internet.herokuapp.com/drag_and_drop");
+        Thread.sleep(2000);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("column-a")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("column-b")));
@@ -50,9 +50,7 @@ public class CommandsTest {
         }
 
 
-
         driver.close();
-
 
     }
 }
